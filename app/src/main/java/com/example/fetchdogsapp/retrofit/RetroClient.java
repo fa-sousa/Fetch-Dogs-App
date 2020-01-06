@@ -1,11 +1,13 @@
 package com.example.fetchdogsapp.retrofit;
 
+import com.example.fetchdogsapp.service.ApiService;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClient {
 
-    private static final String ROOT_URL = "https://dog.ceo/dog-api";
+    private static final String ROOT_URL = "https://dog.ceo/api";
 
     private static Retrofit getRetrofitInstance() {
 
@@ -15,11 +17,6 @@ public class RetroClient {
                 .build();
     }
 
-    /**
-     * Get API Service
-     *
-     * @return API Service
-     */
     public static ApiService getApiService() {
         return getRetrofitInstance().create(ApiService.class);
     }
